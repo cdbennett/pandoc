@@ -23,15 +23,15 @@ def _test_pandoc(result_file, command, *, expected_file_size, size_deviation=0):
             pass
 
 def test_html_generation():
-    to_html = 'docker run --rm -v "$(pwd):/pandoc" geometalab/pandoc pandoc -o {} README.md'
+    to_html = 'docker run --rm -v "$(pwd):/pandoc" gibibit/pandoc pandoc -o {} README.md'
     _test_pandoc('README.html', to_html, expected_file_size=1457, size_deviation=0.1)
 
 
 def test_pdf_generation():
-    to_pdf = 'docker run --rm -v "$(pwd):/pandoc" geometalab/pandoc pandoc -o {} README.md'
+    to_pdf = 'docker run --rm -v "$(pwd):/pandoc" gibibit/pandoc pandoc -o {} README.md'
     _test_pandoc('README.pdf', to_pdf, expected_file_size=106515, size_deviation=0.1)
 
 
 def test_pdf_generation_using_html5_and_wkhtml():
-    to_pdf = 'docker run --rm -v "$(pwd):/pandoc" geometalab/pandoc bash -c "pandoc -t html5 README.md | wkhtmltopdf - {}"'
+    to_pdf = 'docker run --rm -v "$(pwd):/pandoc" gibibit/pandoc bash -c "pandoc -t html5 README.md | wkhtmltopdf - {}"'
     _test_pandoc('README.pdf', to_pdf, expected_file_size=20980, size_deviation=0.1)

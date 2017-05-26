@@ -10,9 +10,9 @@ function remove_if_exists_else_fail {
 }
 
 cd $(dirname $0)
-docker build -t geometalab/pandoc:latest .
+docker build -t gibibit/pandoc:latest .
 
 py.test
 
 # push the newly create image
-docker push geometalab/pandoc:latest
+docker push gibibit/pandoc:latest
