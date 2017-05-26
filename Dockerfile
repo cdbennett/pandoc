@@ -4,7 +4,10 @@ MAINTAINER colin@gibibit.com
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install --yes \
   -o Acquire::Retries=10 --no-install-recommends \
-    texlive-full \
+    texlive-xetex \
+    texlive-fonts-recommended \
+    texlive-fonts-extra \
+    lmodern \
     pandoc \
     make \
     && apt-get clean \
