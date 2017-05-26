@@ -7,7 +7,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     texlive-full \
     pandoc \
     make \
-    wkhtmltopdf \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

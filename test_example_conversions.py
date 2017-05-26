@@ -32,6 +32,7 @@ def test_pdf_generation():
     _test_pandoc('README.pdf', to_pdf, expected_file_size=106515, size_deviation=0.1)
 
 
-def test_pdf_generation_using_html5_and_wkhtml():
-    to_pdf = 'docker run --rm -v "$(pwd):/pandoc" gibibit/pandoc bash -c "pandoc -t html5 README.md | wkhtmltopdf - {}"'
-    _test_pandoc('README.pdf', to_pdf, expected_file_size=20980, size_deviation=0.1)
+# Skip this test, disabling wkhtmltopdf
+#def test_pdf_generation_using_html5_and_wkhtml():
+#    to_pdf = 'docker run --rm -v "$(pwd):/pandoc" gibibit/pandoc bash -c "pandoc -t html5 README.md | wkhtmltopdf - {}"'
+#    _test_pandoc('README.pdf', to_pdf, expected_file_size=20980, size_deviation=0.1)
