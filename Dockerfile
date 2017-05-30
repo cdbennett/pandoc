@@ -31,4 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 
 #ENV PATH ${PATH}:/wkhtmltopdf/wkhtmltox/bin
 
+COPY fonts /usr/local/share/fonts
+RUN fc-cache /usr/local/share/fonts
+
 WORKDIR /pandoc
